@@ -1,7 +1,7 @@
 from typing import Any, Dict
 
-from internal.url_builder import build_url
-from internal.api_request import make_request
+from pywormholescan.internal.url_builder import build_url
+from pywormholescan.internal.api_request import make_request
 
 
 class WormholescanAPI:
@@ -118,6 +118,7 @@ class WormholescanAPI:
         Endpoint - /api/v1/governor/limit
         """
         url = build_url(self._base_url_api, "/governor/limit", kwargs=kwargs)
+        print(url)
         response = make_request(url)
         return response
 
@@ -479,7 +480,7 @@ class WormholescanAPI:
         Returns a list of the top 100 tokens, sorted in descending order by the number of transactions.
 
         Args:
-            timeSpan (str): Time span, supported values: 2d and 7d (default is 2d).
+            time_span (str): Time span, supported values: 2d and 7d (default is 2d).
 
         Endpoint - /api/v1/top-100-corridors
         """
@@ -528,7 +529,7 @@ class WormholescanAPI:
         The volume is calculated using the notional price of the symbol at the day the VAA was emitted.
 
         Args:
-            timeSpan (str): Time span, supported values: 7d, 15d and 30d (default is 7d).
+            time_span (str): Time span, supported values: 7d, 15d and 30d (default is 7d).
 
         Endpoint - /api/v1/top-symbols-by-volume
         """
@@ -545,8 +546,8 @@ class WormholescanAPI:
 
         Args:
             page (int): Page number. Starts at 0.
-            pageSize (int): Number of elements per page.
-            sortOrder (str): Sort results in ascending or descending order. Available values: ASC, DESC
+            page_size (int): Number of elements per page.
+            sort_order (str): Sort results in ascending or descending order. Available values: ASC, DESC
             address (str): Filter transactions by Address.
 
         Endpoint - /api/v1/transactions/
@@ -603,6 +604,7 @@ class WormholescanAPI:
         Endpoint - /api/v1/vaas/:chain_id
         """
         url = build_url(self._base_url_api, f"/vaas/{chain_id}", kwargs=kwargs)
+        print(url)
         response = make_request(url)
         return response
 
@@ -649,8 +651,11 @@ class WormholescanAPI:
         return response
 
     def parse_vaa(self) -> Dict:
-        """Parse a VAA."""
-        ...
+        """
+        Parse a VAA.
+
+        Endpoint - /api/v1/vaas/parse
+        """
 
     def get_vaa_counts(self) -> Dict:
         """
@@ -683,7 +688,7 @@ class WormholescanAPI:
         The volume is calculated using the notional price of the symbol at the day the VAA was emitted.
 
         Args:
-            timeSpan (str): Time span, supported values: 7d, 30d, 90d, 1y and all-time (default is 7d).
+            time_span (str): Time span, supported values: 7d, 30d, 90d, 1y and all-time (default is 7d).
             by (str): Renders the results using notional or tx count (default is notional).
             apps (str): List of apps separated by comma (default is all apps).
 
@@ -714,7 +719,7 @@ w = WormholescanAPI()
 # print(w.get_governor_config_by_guardian_address("0x58CC3AE5C097b213cE3c81979e1B9f9570746AA5"))
 # print(w.get_governor_enqueued_vaas())
 # print(w.get_guardians_enqueued_vaas_by_chain(1))
-# print(w.get_governor_limit())
+print(w.get_governor_limit())
 # print(w.get_governor_notional_available())
 # print(w.get_governor_notional_available_by_chain(1))
 # print(w.get_governor_notional_limit_detail())
@@ -754,7 +759,8 @@ w = WormholescanAPI()
 # print(w.get_vaas_by_chain(1))
 # print(w.get_vaas_by_emitter(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5"))
 # print(w.get_vaa_by_id(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710))
+# print(w.parse_vaa())
 # print(w.get_vaa_counts())
 # print(w.get_version())
 # print(w.get_x_chain_activity())
-print(w.get_swagger_docs())
+# print(w.get_swagger_docs())

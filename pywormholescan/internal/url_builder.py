@@ -1,4 +1,4 @@
-from internal.utils import convert_to_camel_case
+from pywormholescan.internal.utils import convert_to_camel_case
 
 
 def build_url(base_url: str, path: str, **kwargs) -> str:

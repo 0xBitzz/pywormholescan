@@ -1,7 +1,7 @@
 from typing import Dict
 
-from internal.url_builder import build_url
-from internal.api_request import make_request
+from pywormholescan.internal.url_builder import build_url
+from pywormholescan.internal.api_request import make_request
 
 
 class GuardianAPI:
