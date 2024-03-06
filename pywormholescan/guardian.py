@@ -1,14 +1,13 @@
 from typing import Dict
 
+from constants import BASE_URL
 from pywormholescan.internal.url_builder import build_url
 from pywormholescan.internal.api_request import make_request
 
 
 class GuardianAPI:
-    _WORMHOLE_SCAN_URL = "https://api.wormholescan.io"
-
     def __init__(self):
-        self._base_url = f"{self._WORMHOLE_SCAN_URL}/v1"
+        self._base_url = f"{BASE_URL}/v1"
 
     def get_governor_available_notional_by_chain(self) -> Dict:
         """

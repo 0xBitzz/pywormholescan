@@ -1,14 +1,12 @@
 from typing import Any, Dict
 
+from constants import BASE_URL
 from pywormholescan.internal.url_builder import build_url
 from pywormholescan.internal.api_request import make_request
 
-
 class WormholescanAPI:
-    _WORMHOLE_SCAN_URL = "https://api.wormholescan.io"
-
     def __init__(self) -> None:
-        self._base_url_api = f"{self._WORMHOLE_SCAN_URL}/api/v1"
+        self._base_url_api = f"{BASE_URL}/api/v1"
 
     # ---------------  ADDRESS ---------------
     def get_address_by_id(self, address: str, **kwargs: Dict[str, Any]) -> Dict:
