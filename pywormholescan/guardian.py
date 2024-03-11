@@ -1,6 +1,6 @@
 from typing import Dict
 
-from constants import BASE_URL
+from pywormholescan.constants import BASE_URL
 from pywormholescan.internal.url_builder import build_url
 from pywormholescan.internal.api_request import make_request
 
@@ -117,26 +117,3 @@ class GuardianAPI:
         url = build_url(self._base_url, f"/signed_vaa/{chain_id}/{emitter}/{seq}")
         response = make_request(url)
         return response
-
-
-g = GuardianAPI()
-print(g.get_governor_available_notional_by_chain())
-print(g.get_guardians_enqueued_vaas())
-print(
-    g.get_guardians_is_vaa_enqueued(
-        1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710
-    )
-)
-print(g.get_guardians_token_list())
-print(g.get_guardian_set())
-print(g.get_guardians_hearbeats())
-# print(
-#     g.get_guardians_signed_batch_vaa(
-#         1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710
-#     )
-# )
-print(
-    g.get_guardians_signed_vaa(
-        1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710
-    )
-)

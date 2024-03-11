@@ -1,4 +1,4 @@
-from internal.utils import convert_to_camel_case
+from pywormholescan.internal.utils import convert_to_camel_case
 
 
 def build_url(base_url: str, path: str, **kwargs) -> str:
@@ -6,6 +6,7 @@ def build_url(base_url: str, path: str, **kwargs) -> str:
     Builds the complete URL for an API endpoint with path and/or query interpolation.
 
     Args:
+        base_url: Wormholescan API base URL.
         path: The API endpoint path with placeholders for parameters (e.g., /api/v1/governor/limit).
         kwargs: Keyword arguments to be interpolated into the path placeholders.
 

@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from constants import BASE_URL
+from pywormholescan.constants import BASE_URL
 from pywormholescan.internal.url_builder import build_url
 from pywormholescan.internal.api_request import make_request
 
@@ -116,7 +116,6 @@ class WormholescanAPI:
         Endpoint - /api/v1/governor/limit
         """
         url = build_url(self._base_url_api, "/governor/limit", kwargs=kwargs)
-        print(url)
         response = make_request(url)
         return response
 
@@ -154,7 +153,6 @@ class WormholescanAPI:
         url = build_url(
             self._base_url_api, f"/governor/notional/available/{chain}", kwargs=kwargs
         )
-        print(url)
         response = make_request(url)
         return response
 
@@ -602,7 +600,6 @@ class WormholescanAPI:
         Endpoint - /api/v1/vaas/:chain_id
         """
         url = build_url(self._base_url_api, f"/vaas/{chain_id}", kwargs=kwargs)
-        print(url)
         response = make_request(url)
         return response
 
@@ -705,60 +702,6 @@ class WormholescanAPI:
 
         Endpoint - /swagger.json
         """
-        url = build_url(self._WORMHOLE_SCAN_URL, "/swagger.json")
+        url = build_url(BASE_URL, "/swagger.json")
         response = make_request(url)
         return response
-
-
-w = WormholescanAPI()
-# print(w.get_address_by_id("0x12ea0d574b0831e6173047375d4d39dc17bcaa91"))
-# print(w.get_global_txn_by_id(chain_id=1, emitter="ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", seq=797710))
-# print(w.get_governor_config())
-# print(w.get_governor_config_by_guardian_address("0x58CC3AE5C097b213cE3c81979e1B9f9570746AA5"))
-# print(w.get_governor_enqueued_vaas())
-# print(w.get_guardians_enqueued_vaas_by_chain(1))
-print(w.get_governor_limit())
-# print(w.get_governor_notional_available())
-# print(w.get_governor_notional_available_by_chain(1))
-# print(w.get_governor_notional_limit_detail())
-# print(w.get_governor_notional_limit_detail_by_chain(1))
-# print(w.get_governor_max_notional_available_by_chain(1))
-# print(w.get_governor_status())
-# print(w.get_governor_status_by_guardian_address("0x58CC3AE5C097b213cE3c81979e1B9f9570746AA5"))
-# print(w.get_health_check())
-# print(w.get_last_transactions())
-# print(w.get_observations_by_chain(1))
-# print(w.get_observations_by_emitter(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5"))
-# print(w.get_observations_by_sequence(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710))
-# print(w.get_observations_by_id(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710))
-# print(w.get_operations())
-# print(
-#     w.get_operation_by_id(
-#         chain_id=1, emitter="ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", seq=797710
-#     )
-# )
-# print(w.get_ready_check())
-# print(
-#     w.get_relay_by_vaa_id(
-#         1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710
-#     )
-# )
-# print(w.get_scorecards())
-# print(
-#     w.get_token_by_chain_and_address(1, "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3")
-# )
-# print(w.get_top_100_corridors())
-# print(w.get_top_assets_by_volume(time_span="7d"))
-# print(w.get_top_chain_pairs_by_num_transfers(time_span="7d"))
-# print(w.get_top_symbols_by_volume())
-# print(w.get_transactions())
-# print(w.get_transaction_by_id(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710))
-# print(w.get_all_vaas())
-# print(w.get_vaas_by_chain(1))
-# print(w.get_vaas_by_emitter(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5"))
-# print(w.get_vaa_by_id(1, "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5", 797710))
-# print(w.parse_vaa())
-# print(w.get_vaa_counts())
-# print(w.get_version())
-# print(w.get_x_chain_activity())
-# print(w.get_swagger_docs())
