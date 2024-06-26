@@ -1,5 +1,5 @@
 # PyWormholescan
-PyWormholescan is a Python wrapper that simplifies interaction with the [Wormholescan API](https://api.wormholescan.io). It allows developers to leverage the power of Wormholescan's data and functionality using pure Python syntax.
+PyWormholescan is a Python wrapper that simplifies interaction with the [Wormholescan API](https://docs.wormholescan.io/#/wormholescan). It allows developers to leverage the power of Wormholescan's data and functionality using pure Python syntax.
 
 ## Installation
 ```sh
@@ -19,7 +19,7 @@ pip install pywormholescan
 
 3. Explore the available methods:
 
-    Refer to the [official Wormholescan API documentation](https://api.wormholescan.io) for a comprehensive list of available methods and their parameters.
+    Refer to the [official Wormholescan API documentation](https://docs.wormholescan.io/#/wormholescan) for a comprehensive list of available methods and their parameters.
 
 ## Note
 
@@ -56,7 +56,7 @@ This module allows developers to use standard Python syntax. Non-required query 
 PyWormholescan follows Python snake_case conventions for both method names and arguments, ensuring consistency and readability.
 
 ## Documentation
-For detailed method descriptions, parameters, and example usage, refer to the [official Wormholescan API documentation](https://api.wormholescan.io).
+For detailed method descriptions, parameters, and example usage, refer to the [official Wormholescan API documentation](https://docs.wormholescan.io/#/wormholescan).
 
 ## Contribution Guidelines
 
