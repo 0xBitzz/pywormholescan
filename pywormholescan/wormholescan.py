@@ -733,3 +733,4 @@ class WormholescanAPI:
         url = build_url("/api/v1/x-chain-activity/tops", kwargs=kwargs)
         response = self._api_client.get(url)
         return response
+print(WormholescanAPI(Network.MAINNET).get_token_by_chain_and_address(1, "85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ"))
