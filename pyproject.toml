@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pywormholescan"
-version = "0.0.9"
+version = "0.1.0"
 description = "PyWormholescan serves as a Python wrapper for interacting with the Wormholescan API."
 authors = ["0xBitzz <successdaudu@gmail.com>"]
 license = "Apache-2.0 license"
