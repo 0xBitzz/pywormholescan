@@ -24,7 +24,7 @@ class APIClient:
             print(f"GET request failed: {e}")
             raise
 
-    def get_with_path_builder(self, *args, **kwargs) -> dict:
+    def get_with_url_builder(self, *args, **kwargs) -> dict:
         path = build_url(*args, **kwargs)
         return self.get(path)
 

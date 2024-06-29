@@ -20,7 +20,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/address/:address
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/address", address, kwargs=kwargs
         )
         return response
@@ -41,7 +41,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/global-tx/:chain_id/:emitter/:seq
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/global-tx", chain_id, emitter, seq
         )
         return response
@@ -57,7 +57,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/config
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/config", kwargs=kwargs
         )
         return response
@@ -71,7 +71,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/config/:guardian_address
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/config", guardian_address
         )
         return response
@@ -87,7 +87,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/enqueued_vaas/
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/enqueued_vaas", kwargs=kwargs
         )
         return response
@@ -105,7 +105,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/enqueued_vaas/:chain
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/enqueued_vaas", chain
         )
         return response
@@ -120,7 +120,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/limit
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/limit", kwargs=kwargs
         )
         return response
@@ -136,7 +136,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/notional/available
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/notional/available", kwargs=kwargs
         )
         return response
@@ -155,7 +155,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/notional/available/:chain
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/notional/available", chain, kwargs=kwargs
         )
         return response
@@ -170,7 +170,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/notional/limit
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/notional/limit", kwargs=kwargs
         )
         return response
@@ -189,7 +189,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/notional/limit/:chain
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/notional/limit", chain, kwargs=kwargs
         )
         return response
@@ -203,7 +203,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/notional/max_available/:chain
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/notional/max_available", chain
         )
         return response
@@ -218,7 +218,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/status
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/status", kwargs=kwargs
         )
         return response
@@ -237,7 +237,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/governor/status/:guardian_address
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/governor/status", guardian_address, kwargs=kwargs
         )
         return response
@@ -267,7 +267,7 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span, "sample_rate": sample_rate}
 
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/last-txs", kwargs=kwargs
         )
         return response
@@ -284,7 +284,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/observations
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/observations", kwargs=kwargs
         )
         return response
@@ -302,7 +302,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/observations/:chain
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/observations", chain, kwargs=kwargs
         )
         return response
@@ -323,7 +323,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/observations/:chain/:emitter
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/observations", chain, emitter, kwargs=kwargs
         )
         return response
@@ -345,7 +345,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/observations/:chain/:emitter/:sequence
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/observations", chain, emitter, sequence, kwargs=kwargs
         )
         return response
@@ -369,7 +369,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/observations/:chain/:emitter/:sequence/:signer/:hash
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/observations",
             chain,
             emitter_address,
@@ -393,7 +393,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/operations/
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/operations", kwargs=kwargs
         )
         return response
@@ -414,7 +414,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/operations/{chain_id}/{emitter}/{seq}
         """
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/operations", chain_id, emitter, seq
         )
         return response
@@ -451,7 +451,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/relays/:chain/:emitter/:sequence
         """
-        response = self._api_client.get_with_path_builder("/api/v1/relays", chain_id, emitter, seq)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/relays", chain_id, emitter, seq
+        )
         return response
 
     # ---------------  SCORECARDS ---------------
@@ -481,7 +483,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/token/:chain_id/:token_address
         """
-        response = self._api_client.get_with_path_builder("/api/v1/token", chain_id, token_address)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/token", chain_id, token_address
+        )
         return response
 
     # ---------------  TOP ---------------
@@ -496,7 +500,9 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span}
 
-        response = self._api_client.get_with_path_builder("/api/v1/top-100-corridors", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/top-100-corridors", kwargs=kwargs
+        )
         return response
 
     def get_top_assets_by_volume(self, *, time_span: str) -> dict:
@@ -511,7 +517,9 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span}
 
-        response = self._api_client.get_with_path_builder("/api/v1/top-assets-by-volume", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/top-assets-by-volume", kwargs=kwargs
+        )
         return response
 
     def get_top_chain_pairs_by_num_transfers(self, *, time_span: str) -> dict:
@@ -525,7 +533,7 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span}
 
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/top-chain-pairs-by-num-transfers", kwargs=kwargs
         )
         return response
@@ -542,7 +550,9 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span}
 
-        response = self._api_client.get_with_path_builder("/api/v1/top-symbols-by-volume", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/top-symbols-by-volume", kwargs=kwargs
+        )
         return response
 
     # ---------------  TRANSACTIONS ---------------
@@ -558,7 +568,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/transactions/
         """
-        response = self._api_client.get_with_path_builder("/api/v1/transactions", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/transactions", kwargs=kwargs
+        )
         return response
 
     def get_transaction_by_id(self, chain_id: int, emitter: str, seq: int) -> dict:
@@ -572,7 +584,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/transactions/:chain_id/:emitter/:seq
         """
-        response = self._api_client.get_with_path_builder("/api/v1/transactions", chain_id, emitter, seq)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/transactions", chain_id, emitter, seq
+        )
         return response
 
     # ---------------  VAAs ---------------
@@ -590,7 +604,7 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/vaas/
         """
-        response = self._api_client.get_with_path_builder("/api/v1/vaas", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder("/api/v1/vaas", kwargs=kwargs)
         return response
 
     def get_vaas_by_chain(self, chain_id: str, **kwargs: dict) -> dict:
@@ -606,7 +620,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/vaas/:chain_id
         """
-        response = self._api_client.get_with_path_builder("/api/v1/vaas", chain_id, kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/vaas", chain_id, kwargs=kwargs
+        )
         return response
 
     def get_vaas_by_emitter(self, chain: int, emitter: str, **kwargs: dict) -> dict:
@@ -624,7 +640,9 @@ class WormholescanAPI:
 
         Endpoint - /api/v1/vaas/:chain_id/:emitter
         """
-        response = self._api_client.get_with_path_builder("/api/v1/vaas", chain, emitter, kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/vaas", chain, emitter, kwargs=kwargs
+        )
         return response
 
     def get_vaa_by_id(
@@ -650,7 +668,7 @@ class WormholescanAPI:
         if payload:
             kwargs["payload"] = payload
 
-        response = self._api_client.get_with_path_builder(
+        response = self._api_client.get_with_url_builder(
             "/api/v1/vaas", chain, emitter, seq, kwargs=kwargs
         )
         return response
@@ -700,7 +718,9 @@ class WormholescanAPI:
         """
         kwargs = {"time_span": time_span, "by": by, "all apps": apps}
 
-        response = self._api_client.get_with_path_builder("/api/v1/x-chain-activity", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/x-chain-activity", kwargs=kwargs
+        )
         return response
 
     def get_x_chain_activity_by_tops(
@@ -736,5 +756,7 @@ class WormholescanAPI:
         if target_chain:
             kwargs["target_chain"] = target_chain
 
-        response = self._api_client.get_with_path_builder("/api/v1/x-chain-activity/tops", kwargs=kwargs)
+        response = self._api_client.get_with_url_builder(
+            "/api/v1/x-chain-activity/tops", kwargs=kwargs
+        )
         return response

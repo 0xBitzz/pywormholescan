@@ -42,7 +42,9 @@ class GuardianAPI:
 
         Endpoint - /v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq
         """
-        response = self._api_client.get_with_path_builder("/v1/governor/is_vaa_enqueued", chain_id, emitter, sequence)
+        response = self._api_client.get_with_url_builder(
+            "/v1/governor/is_vaa_enqueued", chain_id, emitter, sequence
+        )
         return response
 
     def get_guardians_token_list(self) -> dict:
@@ -89,10 +91,14 @@ class GuardianAPI:
 
         Endpoint - /v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq
         """
-        response = self._api_client.get_with_path_builder("/v1/signed_batch_vaa", chain_id, emitter, sequence)
+        response = self._api_client.get_with_url_builder(
+            "/v1/signed_batch_vaa", chain_id, emitter, sequence
+        )
         return response
 
-    def get_guardians_signed_vaa(self, chain_id: int, emitter: str, sequence: int) -> dict:
+    def get_guardians_signed_vaa(
+        self, chain_id: int, emitter: str, sequence: int
+    ) -> dict:
         """
         Get a batch of VAA []byte from a chainID, emitter address and sequence.
 
@@ -103,5 +109,7 @@ class GuardianAPI:
 
         Endpoint - /v1/signed_vaa/:chain_id/:emitter/:seq
         """
-        response = self._api_client.get_with_path_builder("/v1/signed_vaa", chain_id, emitter, sequence)
+        response = self._api_client.get_with_url_builder(
+            "/v1/signed_vaa", chain_id, emitter, sequence
+        )
         return response
