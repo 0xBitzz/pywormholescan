@@ -1,4 +1,4 @@
-from pywormholescan._internal import APIClient, Network, build_url
+from pywormholescan._internal import APIClient, Network
 
 
 class GuardianAPI:
@@ -17,8 +17,7 @@ class GuardianAPI:
 
         Endpoint - /v1/governor/available_notional_by_chain
         """
-        url = build_url("/v1/governor/available_notional_by_chain")
-        response = self._api_client.get(url)
+        response = self._api_client.get("/v1/governor/available_notional_by_chain")
         return response
 
     def get_guardians_enqueued_vaas(self) -> dict:
@@ -27,12 +26,11 @@ class GuardianAPI:
 
         Endpoint - /v1/governor/enqueued_vaas
         """
-        url = build_url("/v1/governor/enqueued_vaas")
-        response = self._api_client.get(url)
+        response = self._api_client.get("/v1/governor/enqueued_vaas")
         return response
 
     def get_guardians_is_vaa_enqueued(
-        self, chain_id: int, emitter: str, seq: int
+        self, chain_id: int, emitter: str, sequence: int
     ) -> dict:
         """
         Check if vaa is enqueued.
@@ -44,8 +42,7 @@ class GuardianAPI:
 
         Endpoint - /v1/governor/is_vaa_enqueued/:chain_id/:emitter/:seq
         """
-        url = build_url(f"/v1/governor/is_vaa_enqueued/{chain_id}/{emitter}/{seq}")
-        response = self._api_client.get(url)
+        response = self._api_client.get_with_path_builder("/v1/governor/is_vaa_enqueued", chain_id, emitter, sequence)
         return response
 
     def get_guardians_token_list(self) -> dict:
@@ -58,8 +55,7 @@ class GuardianAPI:
 
         Endpoint - /v1/governor/token_list
         """
-        url = build_url("/v1/governor/token_list")
-        response = self._api_client.get(url)
+        response = self._api_client.get("/v1/governor/token_list")
         return response
 
     def get_guardian_current_set(self) -> dict:
@@ -68,8 +64,7 @@ class GuardianAPI:
 
         Endpoint - /v1/guardianset/current
         """
-        url = build_url("/v1/guardianset/current")
-        response = self._api_client.get(url)
+        response = self._api_client.get("/v1/guardianset/current")
         return response
 
     def get_guardians_hearbeats(self) -> dict:
@@ -78,12 +73,11 @@ class GuardianAPI:
 
         Endpoint - /v1/heartbeats
         """
-        url = build_url("/v1/heartbeats")
-        response = self._api_client.get(url)
+        response = self._api_client.get("/v1/heartbeats")
         return response
 
     def get_guardians_signed_batch_vaa(
-        self, chain_id: int, emitter: str, seq: int
+        self, chain_id: int, emitter: str, sequence: int
     ) -> dict:
         """
         Get a batch of VAA []byte from a chainID, emitter address and sequence.
@@ -95,11 +89,10 @@ class GuardianAPI:
 
         Endpoint - /v1/signed_batch_vaa/:chain_id/:emitter/sequence/:seq
         """
-        url = build_url(f"/v1/signed_batch_vaa/{chain_id}/{emitter}/{seq}")
-        response = self._api_client.get(url)
+        response = self._api_client.get_with_path_builder("/v1/signed_batch_vaa", chain_id, emitter, sequence)
         return response
 
-    def get_guardians_signed_vaa(self, chain_id: int, emitter: str, seq: int) -> dict:
+    def get_guardians_signed_vaa(self, chain_id: int, emitter: str, sequence: int) -> dict:
         """
         Get a batch of VAA []byte from a chainID, emitter address and sequence.
 
@@ -110,6 +103,5 @@ class GuardianAPI:
 
         Endpoint - /v1/signed_vaa/:chain_id/:emitter/:seq
         """
-        url = build_url(f"/v1/signed_vaa/{chain_id}/{emitter}/{seq}")
-        response = self._api_client.get(url)
+        response = self._api_client.get_with_path_builder("/v1/signed_vaa", chain_id, emitter, sequence)
         return response

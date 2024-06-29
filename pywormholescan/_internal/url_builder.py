@@ -1,26 +1,27 @@
 __all__ = ["build_url"]
 
 
-def build_url(path: str, **kwargs) -> str:
+def build_url(*args, **kwargs) -> str:
     """
     Builds the complete URL for an API endpoint with path and/or query interpolation.
 
     Args:
-        path: The API endpoint path with placeholders for parameters (e.g., /api/v1/governor/limit).
-        kwargs: Keyword arguments to be interpolated into the path placeholders.
+        *args: Positional arguments to be interpolated into the path.
+        **kwargs: Keyword arguments to be used as query parameters.
 
     Returns:
         The complete URL string.
     """
-    query_params = ""
-    if "kwargs" in kwargs.keys():
-        queries = "?"
-        for k, v in kwargs["kwargs"].items():
-            k = _convert_to_camel_case(k)
-            queries += f"{k}={v}&"
-        query_params += queries[:-1]
+    path_params = "/".join(str(param) for param in args)
 
-    url = path + query_params if query_params else path
+    query_params = ""
+    if kwargs:
+        queries = "&".join(
+            f"{_convert_to_camel_case(k)}={v}" for k, v in kwargs["kwargs"].items()
+        )
+        query_params = f"?{queries}"
+
+    url = f"{path_params}{query_params}" if query_params else path_params
     return url
 
 

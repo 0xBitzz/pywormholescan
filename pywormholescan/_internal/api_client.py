@@ -1,9 +1,7 @@
-from typing import Any
-
-import aiohttp
 import requests
 
 from .network import Network
+from .url_builder import build_url
 
 
 class APIClient:
@@ -25,6 +23,10 @@ class APIClient:
         except requests.RequestException as e:
             print(f"GET request failed: {e}")
             raise
+
+    def get_with_path_builder(self, *args, **kwargs) -> dict:
+        path = build_url(*args, **kwargs)
+        return self.get(path)
 
     def post(self, endpoint: str, json: dict) -> dict:
         url = f"{self.base_url}{endpoint}"
