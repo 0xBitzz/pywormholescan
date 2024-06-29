@@ -128,7 +128,7 @@ def test_get_governor_enqueued_vaas(wormholescan):
     sample_json_data = {"data": [{"chainId": 23}]}
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/governor/enqueued_vaas/",
+        f"{wormholescan.base_url}/api/v1/governor/enqueued_vaas",
         json=sample_json_data,
         status=200,
     )
@@ -141,7 +141,7 @@ def test_get_governor_enqueued_vaas(wormholescan):
 def test_failed_get_governor_enqueued_vaas(wormholescan):
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/governor/enqueued_vaas/",
+        f"{wormholescan.base_url}/api/v1/governor/enqueued_vaas",
         json={"error": "not found"},
         status=404,
     )
@@ -933,7 +933,7 @@ def test_get_transactions(wormholescan):
     sample_json_data = {"transactions": [{"symbol": "W"}]}
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/transactions/",
+        f"{wormholescan.base_url}/api/v1/transactions",
         json=sample_json_data,
         status=200,
     )
@@ -946,7 +946,7 @@ def test_get_transactions(wormholescan):
 def test_failed_get_transactions(wormholescan):
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/transactions/",
+        f"{wormholescan.base_url}/api/v1/transactions",
         json={"error": "not found"},
         status=404,
     )
@@ -993,7 +993,7 @@ def test_get_all_vaas(wormholescan):
     sample_json_data = {"id": {"emitterChain": 23}}
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/vaas/",
+        f"{wormholescan.base_url}/api/v1/vaas",
         json=sample_json_data,
         status=200,
     )
@@ -1006,7 +1006,7 @@ def test_get_all_vaas(wormholescan):
 def test_failed_get_all_vaas(wormholescan):
     responses.add(
         responses.GET,
-        f"{wormholescan.base_url}/api/v1/vaas/",
+        f"{wormholescan.base_url}/api/v1/vaas",
         json={"error": "not found"},
         status=404,
     )
