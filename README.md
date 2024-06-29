@@ -1,25 +1,30 @@
 # PyWormholescan
+
 PyWormholescan is a Python wrapper that simplifies interaction with the [Wormholescan API](https://docs.wormholescan.io/#/wormholescan). It allows developers to leverage the power of Wormholescan's data and functionality using pure Python syntax.
 
 ## Installation
+
 ```sh
 pip install pywormholescan
 ```
 
 ## Usage
-1. Import the WormholescanAPI class.
-    ```python
-    from pywormholescan import WormholescanAPI, Network
-    ```
 
-2. Create an instance of WormholescanAPI
-    ```python
-    w = WormholescanAPI(network=Network.MAINNET)
-    ```
+1. Import the WormholescanAPI class.
+
+   ```python
+   from pywormholescan import WormholescanAPI, Network
+   ```
+
+2. Create an instance of WormholescanAPI by specifying a network, either MAINNET or TESTNET.
+
+   ```python
+   w = WormholescanAPI(network=Network.MAINNET)
+   ```
 
 3. Explore the available methods:
 
-    Refer to the [official Wormholescan API documentation](https://docs.wormholescan.io/#/wormholescan) for a comprehensive list of available methods and their parameters.
+   Refer to the [official Wormholescan API documentation](https://docs.wormholescan.io/#/wormholescan) for a comprehensive list of available methods and their parameters.
 
 ## Note
 
@@ -27,6 +32,7 @@ URL path variables are required arguments and can be passed either as positional
 This module allows developers to use standard Python syntax. Non-required query variables, such as `pageSize` from the core API, can be written in snake case (`page_size`). However, required query variables, such as `time_span`, must be written with snake case.
 
 ## Examples
+
 ```pycon
 # Check health status.
 >>> w.get_health_check()
@@ -53,9 +59,11 @@ This module allows developers to use standard Python syntax. Non-required query 
 ```
 
 ## Naming Conventions:
+
 PyWormholescan follows Python snake_case conventions for both method names and arguments, ensuring consistency and readability.
 
 ## Documentation
+
 For detailed method descriptions, parameters, and example usage, refer to the [official Wormholescan API documentation](https://docs.wormholescan.io/#/wormholescan).
 
 ## Contribution Guidelines
@@ -74,6 +82,7 @@ Here's a quick guide to contributing:
 8. Create a pull request: Create a pull request from your branch to the main branch of the upstream PyWormholescan repository.
 
 Additional Tips:
+
 1. Adhere to code style: Follow the existing code style and formatting conventions for consistency.
 2. Write clear documentation: If you're adding new features, provide clear documentation within the code using docstrings.
 3. Communicate effectively: Clearly explain your changes and reasoning in the pull request description.
